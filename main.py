@@ -1,9 +1,15 @@
+############################################
+####    Login and Sign Up via Python    ####
+####        By -Univocal Geeks          ####
+############################################
+
 # LOGIN Function here...
+
 def login():
     uname = input('Enter username: ')
     uname = uname.lower()
     pswd = input('Enter password: ')
-    myfile = open('db/data.txt', 'r')
+    myfile = open('data.txt', 'r')
     u_name = myfile.read()
     x = uname in u_name
     if x == False:
@@ -21,7 +27,7 @@ def login():
 
 # Sign up Function here...
 def sign_up():
-    f = open('db/data.txt', 'a')
+    f = open('data.txt', 'a')
     user = dict()
     uname = input('Enter a username: ')
     uname = uname.lower()
@@ -34,6 +40,7 @@ def sign_up():
     login()
 
 
+
 # Main Body here...
 print('Welcome!')
 choice = input('Login or Sign up? (L/S): ')
@@ -41,10 +48,10 @@ choice = choice.lower()
 choice = choice[0:1]
 
 if choice == 'l':
-    login()
+    login()                     #Jump to Login Function
 
 elif choice == 's':
-    sign_up()
+    sign_up()                   #Jump to Sign up Function
 
 else:
     print('Oops! Invalid selection.')
